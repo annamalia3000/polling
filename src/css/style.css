@@ -1,0 +1,79 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -webkit-osx-font-smoothing: grayscale;
+    font-size: 16px;
+    color: #4b4d4f;
+    background: #f6f6f6;
+    margin: 0; 
+    height: 100vh;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 800px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+    background: url('../img/back-paper.png');
+    background-size: contain;
+    background-repeat: repeat;
+    border-top: 22px solid rgb(192, 191, 189);
+    border-radius: 10px;
+}
+
+.container-messages {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.title {
+    align-self: flex-start;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.messages-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+   
+}
+
+.message-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+    gap: 10px;
+    background-color: white;
+
+    border: solid 2px #4b4d4f;
+    border-radius: 5px;
+
+}
+
+.message-from {
+    width: 210px;
+    
+}
+
+.message-subject {
+    width: 140px;
+    
+}
+.message-date {
+    width: 130px;
+    
+}
