@@ -1,10 +1,12 @@
 import { shortSubject } from './shortSubject';
 import { formatDate } from './formatDate';
 
-export function addMessages(messages) {
-    const messageslist = document.querySelector('.messages-list');
+export class Message {
+    constructor(containerSelector) {
+        this.messageslist = document.querySelector(containerSelector);
+    }
 
-    messages.forEach(message => {
+    createMessageIteam(message) {
         const messageItem = document.createElement('div');
         messageItem.classList.add('message-item');
         
@@ -23,7 +25,14 @@ export function addMessages(messages) {
         messageItem.appendChild(messageFrom);
         messageItem.appendChild(messageSubject);
         messageItem.appendChild(messageDate);
-        messageslist.insertBefore(messageItem, messageslist.firstChild);
-    });
+       
+        return messageItem;
+    };
 
+    addMessages(messages) {
+        messages.forEach(message => {
+            const messageItem = this.createMessageIteam(message);
+            this.messageslist.insertBefore(messageItem, this.messageslist.firstChild);
+        });
+    }
 }
